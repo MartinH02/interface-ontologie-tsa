@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de la Prédiction - Veille Technologique</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">📊 Résultat de la Prédiction</h1>
+                <p class="subtitle">Analyse basée sur le modèle de Machine Learning</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Result Section -->
+    <section class="result-section">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>Probabilité d'Autisme</h2>
+                </div>
+                
+                <div class="result-display">
+                    <div class="probability-circle">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring-circle-bg" cx="100" cy="100" r="90" />
+                            <circle class="progress-ring-circle" cx="100" cy="100" r="90" 
+                                    stroke-dasharray="{{ (probability * 5.65) }}, 565" />
+                        </svg>
+                        <div class="probability-text">
+                            <span class="probability-value">{{ probability }}%</span>
+                            <span class="probability-label">Risque</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-interpretation">
+                        {% if probability >= 50 %}
+                        <div class="interpretation-high">
+                            <h3>⚠️ Risque Élevé</h3>
+                            <p>Le modèle indique un risque élevé d'autisme. Il est recommandé de consulter un professionnel de santé pour un diagnostic complet.</p>
+                        </div>
+                        {% elif probability >= 30 %}
+                        <div class="interpretation-medium">
+                            <h3>⚡ Risque Modéré</h3>
+                            <p>Le modèle indique un risque modéré. Une consultation avec un professionnel peut être bénéfique pour évaluer la situation.</p>
+                        </div>
+                        {% else %}
+                        <div class="interpretation-low">
+                            <h3>✅ Risque Faible</h3>
+                            <p>Le modèle indique un risque faible d'autisme selon les critères évalués.</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <h3>Détails de la Prédiction</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Prédiction:</span>
+                            <span class="detail-value">{% if prediction == 1 %}Autisme détecté{% else %}Pas d'autisme{% endif %}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Probabilité:</span>
+                            <span class="detail-value">{{ probability }}%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Score total (A1-A10):</span>
+                            <span class="detail-value">{{ data.A1_Score + data.A2_Score + data.A3_Score + data.A4_Score + data.A5_Score + data.A6_Score + data.A7_Score + data.A8_Score + data.A9_Score + data.A10_Score }}/10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-warning">
+                    <p><strong>⚠️ Avertissement Important:</strong></p>
+                    <p>Ce modèle est destiné à des fins de recherche uniquement. Il ne remplace en aucun cas un diagnostic médical professionnel. Si vous avez des préoccupations concernant l'autisme, veuillez consulter un professionnel de santé qualifié.</p>
+                </div>
+
+                <div class="result-actions">
+                    <a href="{{ url_for('prediction_page') }}" class="action-btn">Nouvelle Prédiction</a>
+                    <a href="{{ url_for('index') }}" class="action-btn secondary">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Veille Technologique - IA03 - Groupe 4</p>
+            <p>Naya Mattar, Martin Halbourg</p>
+        </div>
+    </footer>
+</body>
+</html>
+

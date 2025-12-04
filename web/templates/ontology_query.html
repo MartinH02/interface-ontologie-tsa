@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interrogation de l'Ontologie - TSA-NLP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .query-section {
+            padding: 4rem 0;
+        }
+        
+        .query-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .query-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .query-header h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .query-header p {
+            color: var(--text-secondary);
+        }
+        
+        .question-selector {
+            margin-bottom: 2rem;
+        }
+        
+        .question-selector label {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .question-selector select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .question-selector select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .question-form {
+            display: none;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .question-form.active {
+            display: block;
+        }
+        
+        .question-text {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .results-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+            display: none;
+        }
+        
+        .results-section.active {
+            display: block;
+        }
+        
+        .results-header {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .results-count {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .result-item {
+            background: var(--bg-card-hover);
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .no-results {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 2rem;
+            background: var(--bg-card-hover);
+            border-radius: 6px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-top: 2rem;
+        }
+        
+        .back-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🔍 Interrogation de l'Ontologie</h1>
+                <p class="subtitle">Explorez les relations entre les concepts TSA-NLP</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Query Section -->
+    <section class="query-section">
+        <div class="container">
+            <div class="query-container">
+                <div class="query-header">
+                    <h1>Questions à Trou</h1>
+                    <p>Sélectionnez une question et complétez les champs pour interroger l'ontologie</p>
+                </div>
+
+                <div class="question-selector">
+                    <label for="question-select">Choisissez une question :</label>
+                    <select id="question-select" onchange="showQuestionForm()">
+                        <option value="">-- Sélectionnez une question --</option>
+                        <option value="1">Quels outils numériques utilisent la technologie [TECHNOLOGIE] ?</option>
+                        <option value="2">Quels outils numériques sont utilisés par [PERSONNE_TSA] ?</option>
+                        <option value="3">Quels outils numériques soutiennent l'intervention [INTERVENTION] ?</option>
+                        <option value="4">Quels besoins satisfait [OUTIL_NUMERIQUE]. Ce besoin est-il un besoin parent ou enfant TSA ?</option>
+                        <option value="6">Lister l'ensemble des exemples de chaque <strong>[TYPE DE OUTIL_NUMERIQUE]</strong></option>
+                    </select>
+                </div>
+
+                <!-- Question 1 -->
+                <div id="question-1" class="question-form">
+                    <div class="question-text">Quels outils numériques utilisent la technologie <strong>[TYPE_TECHNO]</strong> ?</div>
+                    <div class="form-group">
+                        <label for="q1-technologie">Type de technologie :</label>
+                        <select id="q1-technologie">
+                            <option value="">-- Sélectionnez --</option>
+                            {% for tech in individuals.get('TechnologieNLP', []) %}
+                            <option value="{{ tech.id }}">{{ tech.label }}</option>
+                            {% endfor %}
+                            {% for tech in individuals.get('TechnologieVision', []) %}
+                            <option value="{{ tech.id }}">{{ tech.label }}</option>
+                            {% endfor %}
+                            {% for tech in individuals.get('TechnologieMouvement', []) %}
+                            <option value="{{ tech.id }}">{{ tech.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="executeQuery(1)">Exécuter la requête</button>
+                </div>
+
+                <!-- Question 2 -->
+                <div id="question-2" class="question-form">
+                    <div class="question-text">Quels outils numériques sont utilisés par <strong>[PERSONNE_TSA]</strong> ?</div>
+                    <div class="form-group">
+                        <label for="q2-personne">Personne TSA :</label>
+                        <select id="q2-personne">
+                            <option value="">-- Sélectionnez --</option>
+                            {% for personne in individuals.get('PersonneTSA', []) %}
+                            <option value="{{ personne.id }}">{{ personne.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="executeQuery(2)">Exécuter la requête</button>
+                </div>
+
+                <!-- Question 3 -->
+                <div id="question-3" class="question-form">
+                    <div class="question-text">Quels outils numériques soutiennent l'intervention <strong>[INTERVENTION]</strong> ?</div>
+                    <div class="form-group">
+                        <label for="q3-intervention">Intervention :</label>
+                        <select id="q3-intervention">
+                            <option value="">-- Sélectionnez --</option>
+                            {% for intervention in individuals.get('Intervention', []) %}
+                            <option value="{{ intervention.id }}">{{ intervention.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="executeQuery(3)">Exécuter la requête</button>
+                </div>
+
+                <!-- Question 4 -->
+                <div id="question-4" class="question-form">
+                    <div class="question-text">Quels besoins satisfait <strong>[OUTIL_NUMERIQUE]</strong>. Ce besoin est-il un besoin parent ou enfant TSA ?</div>
+                    <div class="form-group">
+                        <label for="q4-outil">Outil numérique :</label>
+                        <select id="q4-outil">
+                            <option value="">-- Sélectionnez --</option>
+                            {% for outil in individuals.get('Applications', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('RobotSocial', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('SystemeVR_AR', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('SystemeCaptationMouvement', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('SystemeMonitoring', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('SystemePlanificationVisuelle', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('JeuSerieux', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('ObjetConnecte', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('OutilEvaluation', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                            {% for outil in individuals.get('OutilNumerique', []) %}
+                            <option value="{{ outil.id }}">{{ outil.label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="executeQuery(4)">Exécuter la requête</button>
+                </div>
+
+                <!-- Question 6 -->
+                <div id="question-6" class="question-form">
+                    <div class="question-text">Lister l'ensemble des exemples de chaque <strong>[TYPE DE OUTIL_NUMERIQUE]</strong></div>
+                    <div class="form-group">
+                        <label for="q6-sousclasse">Sous-classe de OutilNumérique :</label>
+                        <select id="q6-sousclasse">
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="Applications">Applications</option>
+                            <option value="RobotSocial">RobotSocial</option>
+                            <option value="SystemeVR_AR">SystemeVR_AR</option>
+                            <option value="SystemeCaptationMouvement">SystemeCaptationMouvement</option>
+                            <option value="SystemeMonitoring">SystemeMonitoring</option>
+                            <option value="SystemePlanificationVisuelle">SystemePlanificationVisuelle</option>
+                            <option value="JeuSerieux">JeuSerieux</option>
+                            <option value="ObjetConnecte">ObjetConnecte</option>
+                            <option value="OutilEvaluation">OutilEvaluation</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="executeQuery(6)">Exécuter la requête</button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="results-section" class="results-section">
+                    <div class="results-header">Résultats</div>
+                    <div class="results-count" id="results-count"></div>
+                    <ul class="results-list" id="results-list"></ul>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="{{ url_for('index') }}" class="back-btn">← Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Veille Technologique - IA03 - Groupe 4</p>
+            <p>Naya Mattar, Martin Halbourg</p>
+        </div>
+    </footer>
+
+    <script>
+        function showQuestionForm() {
+            const select = document.getElementById('question-select');
+            const selectedQuestion = select.value;
+            
+            // Masquer tous les formulaires
+            document.querySelectorAll('.question-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            // Masquer les résultats
+            document.getElementById('results-section').classList.remove('active');
+            
+            // Afficher le formulaire sélectionné
+            if (selectedQuestion) {
+                document.getElementById(`question-${selectedQuestion}`).classList.add('active');
+            }
+        }
+        
+        async function executeQuery(questionId) {
+            const resultsSection = document.getElementById('results-section');
+            const resultsList = document.getElementById('results-list');
+            const resultsCount = document.getElementById('results-count');
+            
+            // Récupérer les paramètres selon la question
+            let params = {};
+            
+            if (questionId === 1) {
+                const technologie = document.getElementById('q1-technologie').value;
+                if (!technologie) {
+                    alert('Veuillez sélectionner une technologie');
+                    return;
+                }
+                params.technologie = technologie;
+            } else if (questionId === 2) {
+                const personne = document.getElementById('q2-personne').value;
+                if (!personne) {
+                    alert('Veuillez sélectionner une personne TSA');
+                    return;
+                }
+                params.personne = personne;
+            } else if (questionId === 3) {
+                const intervention = document.getElementById('q3-intervention').value;
+                if (!intervention) {
+                    alert('Veuillez sélectionner une intervention');
+                    return;
+                }
+                params.intervention = intervention;
+            } else if (questionId === 4) {
+                const outil = document.getElementById('q4-outil').value;
+                if (!outil) {
+                    alert('Veuillez sélectionner un outil numérique');
+                    return;
+                }
+                params.outil = outil;
+            } else if (questionId === 6) {
+                const sousclasse = document.getElementById('q6-sousclasse').value;
+                if (!sousclasse) {
+                    alert('Veuillez sélectionner une sous-classe');
+                    return;
+                }
+                params.sousclasse = sousclasse;
+            }
+            
+            // Afficher un indicateur de chargement
+            resultsList.innerHTML = '<li class="result-item">Chargement...</li>';
+            resultsSection.classList.add('active');
+            
+            try {
+                const response = await fetch('/ontology/query/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question_id: questionId.toString(),
+                        params: params
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultsCount.textContent = `${data.count} résultat(s) trouvé(s)`;
+                    
+                    if (data.results.length === 0) {
+                        resultsList.innerHTML = '<li class="no-results">Aucun résultat trouvé</li>';
+                    } else {
+                        resultsList.innerHTML = data.results.map(result => 
+                            `<li class="result-item">${result}</li>`
+                        ).join('');
+                    }
+                } else {
+                    resultsList.innerHTML = `<li class="no-results">Erreur: ${data.error || 'Erreur inconnue'}</li>`;
+                }
+            } catch (error) {
+                resultsList.innerHTML = `<li class="no-results">Erreur lors de l'exécution de la requête: ${error.message}</li>`;
+            }
+        }
+    </script>
+</body>
+</html>
+

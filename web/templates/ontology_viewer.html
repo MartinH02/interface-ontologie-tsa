@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation Ontologie TSA-NLP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        .ontology-container {
+            padding: 2rem 0;
+        }
+        
+        .ontology-header {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .ontology-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .ontology-header p {
+            color: var(--text-secondary);
+        }
+        
+        .ontology-controls {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-btn {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .control-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .info-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        #ontology-network {
+            width: 100%;
+            height: 70vh;
+            min-height: 600px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        
+        .legend {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        
+        /* Fiche des détails de l'individu */
+        .individual-details-panel {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .details-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .details-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .close-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .details-content {
+            padding: 1.5rem;
+        }
+        
+        .details-loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .details-body {
+            min-height: 100px;
+        }
+        
+        .properties-section {
+            margin-bottom: 2rem;
+        }
+        
+        .properties-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .properties-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .property-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.75rem 1rem;
+            background: var(--bg-color);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .property-item:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary-color);
+        }
+        
+        .property-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .property-value {
+            color: var(--text-secondary);
+            text-align: right;
+            word-break: break-word;
+            flex: 1;
+        }
+        
+        .no-properties {
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            padding: 1rem;
+            text-align: center;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 6px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🔗 Ontologie</h1>
+                <p class="subtitle">Visualisation interactive des concepts et relations</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ontology Viewer -->
+    <section class="ontology-section">
+        <div class="container">
+            <div class="ontology-header">
+                <h1>📊 Visualisation Interactive</h1>
+                <p>Double-cliquez sur un nœud pour développer ses relations. Commencez par "Thing" (classe racine OWL).</p>
+            </div>
+            
+            <div class="ontology-controls">
+                <button class="control-btn" onclick="resetGraph()">🔄 Réinitialiser</button>
+                <button class="control-btn" onclick="expandAll()">📈 Tout développer</button>
+                <button class="control-btn" onclick="collapseAll()">📉 Tout réduire</button>
+                <button class="control-btn" onclick="fitToScreen()">🔍 Ajuster à l'écran</button>
+            </div>
+            
+            <div class="info-panel">
+                <strong>💡 Instructions:</strong> Double-cliquez sur un nœud pour développer ses sous-classes et relations. 
+                Cliquez sur un individu pour voir ses propriétés dans la fiche ci-dessous. 
+                Utilisez la molette de la souris pour zoomer, et cliquez-glissez pour déplacer le graphique.
+            </div>
+            
+            <div id="ontology-network"></div>
+            
+            <!-- Fiche des propriétés de l'individu -->
+            <div id="individual-details-panel" class="individual-details-panel" style="display: none;">
+                <div class="details-header">
+                    <h3 id="details-title">Détails de l'individu</h3>
+                    <button class="close-btn" onclick="closeDetailsPanel()">×</button>
+                </div>
+                <div class="details-content">
+                    <div id="details-loading" class="details-loading" style="display: none;">
+                        <p>Chargement des propriétés...</p>
+                    </div>
+                    <div id="details-body" class="details-body">
+                        <!-- Contenu chargé dynamiquement -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #6366f1;"></div>
+                    <span>Classe</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8b5cf6;"></div>
+                    <span>Propriété</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ec4899;"></div>
+                    <span>Individu</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #10b981;"></div>
+                    <span>Thing (Racine)</span>
+                </div>
+            </div>
+            
+            <div class="ontology-actions" style="margin-top: 2rem; text-align: center;">
+                <a href="{{ url_for('index') }}" class="back-btn">← Retour à l'accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Veille Technologique - IA03 - Groupe 4</p>
+            <p>Naya Mattar, Martin Halbourg</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        // Données de l'ontologie
+        // eslint-disable-next-line
+        const ontologyData = {{ ontology_data_json|safe }};
+        
+        // État du graphique
+        let nodes = new vis.DataSet([]);
+        let edges = new vis.DataSet([]);
+        let expandedNodes = new Set();
+        let allNodes = {};
+        let allEdges = [];
+        
+        // Initialiser les données
+        function initializeData() {
+            // Créer le nœud Thing (racine)
+            allNodes['Thing'] = {
+                id: 'Thing',
+                label: 'Thing',
+                type: 'root',
+                color: { background: '#10b981', border: '#059669' },
+                shape: 'box',
+                font: { size: 16, bold: true }
+            };
+            
+            // Ajouter toutes les classes
+            for (const [id, data] of Object.entries(ontologyData.classes)) {
+                allNodes[id] = {
+                    id: id,
+                    label: data.label || id,
+                    type: 'class',
+                    color: { background: '#6366f1', border: '#4f46e5' },
+                    shape: 'box'
+                };
+            }
+            
+            // Ajouter toutes les propriétés
+            for (const [id, data] of Object.entries(ontologyData.properties)) {
+                allNodes[id] = {
+                    id: id,
+                    label: data.label || id,
+                    type: 'property',
+                    color: { background: '#8b5cf6', border: '#7c3aed' },
+                    shape: 'diamond'
+                };
+            }
+            
+            // Ajouter tous les individus
+            for (const [id, data] of Object.entries(ontologyData.individuals)) {
+                allNodes[id] = {
+                    id: id,
+                    label: data.label || id,
+                    type: 'individual',
+                    color: { background: '#ec4899', border: '#db2777' },
+                    shape: 'ellipse'
+                };
+            }
+            
+            // Créer toutes les relations
+            for (const rel of ontologyData.subclass_relations) {
+                allEdges.push({
+                    id: `edge_${rel.from}_${rel.to}`,
+                    from: rel.from,
+                    to: rel.to,
+                    label: 'subClassOf',
+                    arrows: 'to',
+                    color: { color: '#94a3b8' },
+                    dashes: false
+                });
+            }
+            
+            for (const rel of ontologyData.property_relations) {
+                allEdges.push({
+                    id: `edge_${rel.from}_${rel.to}_${rel.type}`,
+                    from: rel.from,
+                    to: rel.to,
+                    label: rel.label || rel.type,
+                    arrows: 'to',
+                    color: { color: '#cbd5e1' },
+                    dashes: true
+                });
+            }
+        }
+        
+        // Développer un nœud (afficher ses relations)
+        function expandNode(nodeId) {
+            if (expandedNodes.has(nodeId)) return;
+            
+            expandedNodes.add(nodeId);
+            
+            const relatedNodeIds = new Set();
+            const relatedEdges = [];
+            
+            // Pour Thing, afficher uniquement les classes racines (sans parent explicite)
+            if (nodeId === 'Thing') {
+                // Trouver toutes les classes qui n'ont pas de parent explicite
+                // (c'est-à-dire qui n'apparaissent pas comme 'from' dans les relations subClassOf)
+                const allClassIds = new Set();
+                const classesWithParent = new Set();
+                
+                // Récupérer toutes les classes
+                for (const [id, node] of Object.entries(allNodes)) {
+                    if (node.type === 'class' && id !== 'Thing') {
+                        allClassIds.add(id);
+                    }
+                }
+                
+                // Trouver les classes qui ont un parent
+                for (const edge of allEdges) {
+                    if (edge.label === 'subClassOf' && edge.from !== 'Thing') {
+                        classesWithParent.add(edge.from);
+                    }
+                }
+                
+                // Les classes racines sont celles qui n'ont pas de parent
+                const rootClasses = [...allClassIds].filter(id => !classesWithParent.has(id));
+                
+                // Créer des arêtes virtuelles vers Thing pour ces classes racines
+                for (const classId of rootClasses) {
+                    relatedNodeIds.add(classId);
+                    const thingEdge = {
+                        id: `edge_${classId}_Thing`,
+                        from: classId,
+                        to: 'Thing',
+                        label: 'subClassOf',
+                        arrows: 'to',
+                        color: { color: '#94a3b8' },
+                        dashes: false
+                    };
+                    // Vérifier si l'arête existe déjà dans allEdges
+                    if (!allEdges.find(e => e.id === thingEdge.id)) {
+                        allEdges.push(thingEdge);
+                    }
+                    relatedEdges.push(thingEdge);
+                }
+            }
+            // Pour une classe, afficher ses sous-classes directes OU ses individus
+            else if (allNodes[nodeId] && allNodes[nodeId].type === 'class') {
+                // D'abord, chercher les sous-classes directes
+                const directSubclasses = allEdges.filter(edge => 
+                    edge.to === nodeId && edge.label === 'subClassOf'
+                );
+                
+                if (directSubclasses.length > 0) {
+                    // Si la classe a des sous-classes, les afficher
+                    for (const edge of directSubclasses) {
+                        relatedNodeIds.add(edge.from);
+                        relatedEdges.push(edge);
+                    }
+                } else {
+                    // Si pas de sous-classes, afficher les individus de cette classe
+                    const individuals = allEdges.filter(edge => 
+                        edge.to === nodeId && edge.label === 'est de type' && 
+                        allNodes[edge.from] && allNodes[edge.from].type === 'individual'
+                    );
+                    
+                    for (const edge of individuals) {
+                        relatedNodeIds.add(edge.from);
+                        relatedEdges.push(edge);
+                    }
+                }
+            }
+            // Pour les autres types de nœuds (propriétés, individus), afficher leurs relations normales
+            else {
+                const normalEdges = allEdges.filter(edge => 
+                    edge.from === nodeId || edge.to === nodeId
+                );
+                
+                for (const edge of normalEdges) {
+                    relatedNodeIds.add(edge.from);
+                    relatedNodeIds.add(edge.to);
+                    relatedEdges.push(edge);
+                }
+            }
+            
+            // Ajouter les nœuds et arêtes au graphique
+            for (const id of relatedNodeIds) {
+                if (allNodes[id] && !nodes.get(id)) {
+                    nodes.add(allNodes[id]);
+                }
+            }
+            
+            for (const edge of relatedEdges) {
+                if (!edges.get(edge.id)) {
+                    edges.add(edge);
+                }
+            }
+        }
+        
+        // Réduire un nœud (cacher ses relations)
+        function collapseNode(nodeId) {
+            expandedNodes.delete(nodeId);
+            
+            // Trouver tous les nœuds qui ne sont connectés qu'à ce nœud
+            const relatedEdges = edges.get().filter(edge => 
+                edge.from === nodeId || edge.to === nodeId
+            );
+            
+            const relatedNodeIds = new Set();
+            for (const edge of relatedEdges) {
+                if (edge.from !== nodeId) relatedNodeIds.add(edge.from);
+                if (edge.to !== nodeId) relatedNodeIds.add(edge.to);
+            }
+            
+            // Supprimer les arêtes
+            for (const edge of relatedEdges) {
+                edges.remove(edge.id);
+            }
+            
+            // Supprimer les nœuds qui ne sont plus connectés (sauf Thing)
+            for (const nodeId of relatedNodeIds) {
+                if (nodeId === 'Thing') continue;
+                const remainingEdges = edges.get().filter(edge => 
+                    edge.from === nodeId || edge.to === nodeId
+                );
+                if (remainingEdges.length === 0 && !expandedNodes.has(nodeId)) {
+                    nodes.remove(nodeId);
+                }
+            }
+        }
+        
+        // Initialiser le graphique
+        function initializeGraph() {
+            initializeData();
+            
+            // Commencer avec Thing
+            nodes.add(allNodes['Thing']);
+            
+            const container = document.getElementById('ontology-network');
+            const data = { nodes: nodes, edges: edges };
+            const options = {
+                nodes: {
+                    borderWidth: 2,
+                    shadow: true,
+                    font: { size: 14, color: '#ffffff' }
+                },
+                edges: {
+                    width: 2,
+                    shadow: true,
+                    font: { size: 12, color: '#94a3b8', align: 'middle' },
+                    smooth: { type: 'continuous' }
+                },
+                physics: {
+                    enabled: true,
+                    stabilization: { iterations: 200 }
+                },
+                interaction: {
+                    zoomView: true,
+                    dragView: true
+                }
+            };
+            
+            const network = new vis.Network(container, data, options);
+            
+            // Gérer le double-clic
+            network.on('doubleClick', function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    if (expandedNodes.has(nodeId)) {
+                        collapseNode(nodeId);
+                    } else {
+                        expandNode(nodeId);
+                    }
+                }
+            });
+            
+            // Gérer le clic simple sur un individu
+            network.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    const node = allNodes[nodeId];
+                    
+                    // Si c'est un individu, afficher ses propriétés
+                    if (node && node.type === 'individual') {
+                        showIndividualDetails(nodeId, node.label);
+                    } else {
+                        // Fermer la fiche si on clique sur autre chose
+                        closeDetailsPanel();
+                    }
+                } else {
+                    // Fermer la fiche si on clique en dehors
+                    closeDetailsPanel();
+                }
+            });
+            
+            // Stocker la référence du réseau
+            window.ontologyNetwork = network;
+        }
+        
+        // Fonctions de contrôle
+        function resetGraph() {
+            nodes.clear();
+            edges.clear();
+            expandedNodes.clear();
+            nodes.add(allNodes['Thing']);
+            if (window.ontologyNetwork) {
+                window.ontologyNetwork.fit();
+            }
+        }
+        
+        function expandAll() {
+            const allNodeIds = Object.keys(allNodes);
+            for (const nodeId of allNodeIds) {
+                if (!expandedNodes.has(nodeId)) {
+                    expandNode(nodeId);
+                }
+            }
+        }
+        
+        function collapseAll() {
+            resetGraph();
+        }
+        
+        function fitToScreen() {
+            if (window.ontologyNetwork) {
+                window.ontologyNetwork.fit({ animation: true });
+            }
+        }
+        
+        // Afficher les détails d'un individu
+        function showIndividualDetails(individualId, individualLabel) {
+            const panel = document.getElementById('individual-details-panel');
+            const title = document.getElementById('details-title');
+            const loading = document.getElementById('details-loading');
+            const body = document.getElementById('details-body');
+            
+            // Afficher le panel
+            panel.style.display = 'block';
+            title.textContent = `Détails : ${individualLabel}`;
+            loading.style.display = 'block';
+            body.innerHTML = '';
+            
+            // Récupérer les propriétés depuis l'API
+            fetch(`/ontology/individual/${individualId}/properties`)
+                .then(response => response.json())
+                .then(data => {
+                    loading.style.display = 'none';
+                    
+                    if (data.success) {
+                        let html = '';
+                        
+                        // Afficher les data properties
+                        if (data.data_properties && data.data_properties.length > 0) {
+                            html += '<div class="properties-section">';
+                            html += '<h4 class="section-title">📝 Data Properties</h4>';
+                            html += '<div class="properties-list">';
+                            data.data_properties.forEach(prop => {
+                                html += `<div class="property-item">`;
+                                html += `<span class="property-name">${prop.property_label || prop.property}:</span>`;
+                                html += `<span class="property-value">${prop.value}</span>`;
+                                html += `</div>`;
+                            });
+                            html += '</div>';
+                            html += '</div>';
+                        } else {
+                            html += '<div class="properties-section">';
+                            html += '<h4 class="section-title">📝 Data Properties</h4>';
+                            html += '<p class="no-properties">Aucune data property</p>';
+                            html += '</div>';
+                        }
+                        
+                        // Afficher les object properties
+                        if (data.object_properties && data.object_properties.length > 0) {
+                            html += '<div class="properties-section">';
+                            html += '<h4 class="section-title">🔗 Object Properties</h4>';
+                            html += '<div class="properties-list">';
+                            data.object_properties.forEach(prop => {
+                                html += `<div class="property-item">`;
+                                html += `<span class="property-name">${prop.property_label || prop.property}:</span>`;
+                                html += `<span class="property-value">${prop.value}</span>`;
+                                html += `</div>`;
+                            });
+                            html += '</div>';
+                            html += '</div>';
+                        } else {
+                            html += '<div class="properties-section">';
+                            html += '<h4 class="section-title">🔗 Object Properties</h4>';
+                            html += '<p class="no-properties">Aucune object property</p>';
+                            html += '</div>';
+                        }
+                        
+                        body.innerHTML = html;
+                    } else {
+                        body.innerHTML = '<p class="error-message">Erreur lors du chargement des propriétés</p>';
+                    }
+                })
+                .catch(error => {
+                    loading.style.display = 'none';
+                    body.innerHTML = `<p class="error-message">Erreur: ${error.message}</p>`;
+                });
+        }
+        
+        // Fermer le panel de détails
+        function closeDetailsPanel() {
+            const panel = document.getElementById('individual-details-panel');
+            panel.style.display = 'none';
+        }
+        
+        // Initialiser au chargement
+        window.addEventListener('load', initializeGraph);
+    </script>
+</body>
+</html>
+

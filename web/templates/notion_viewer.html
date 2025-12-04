@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Veille - Notion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .notion-container {
+            padding: 2rem 0;
+        }
+        
+        .notion-header {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .notion-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .notion-header p {
+            color: var(--text-secondary);
+        }
+        
+        .notion-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            min-height: 80vh;
+        }
+        
+        .notion-iframe {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .notion-fallback {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        .notion-fallback h2 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .notion-fallback p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .notion-link {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .notion-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .notion-config {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .notion-config code {
+            background: var(--bg-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">📊 Analyse de Veille</h1>
+                <p class="subtitle">Page Notion intégrée</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notion Viewer -->
+    <section class="notion-section">
+        <div class="container">
+            <div class="notion-header">
+                <h1>📚 Analyse de Veille Technologique</h1>
+                <p>Contenu intégré depuis Notion</p>
+            </div>
+            
+            {% if notion_url %}
+            <div class="notion-wrapper">
+                <!-- Notion peut être intégré via iframe si la page est publique -->
+                <!-- Utilisez l'URL d'embed fournie par Notion (avec /ebd/ dans le chemin) -->
+                {% if 'notion.so' in notion_url or 'notion.site' in notion_url %}
+                    <!-- S'assurer que l'URL utilise le format embed si nécessaire -->
+                    {% if '/ebd/' in notion_url %}
+                        {% set embed_url = notion_url %}
+                    {% elif 'notion.so' in notion_url and '/embed/' not in notion_url %}
+                        {% set embed_url = notion_url.replace('https://www.notion.so/', 'https://www.notion.so/embed/') %}
+                    {% else %}
+                        {% set embed_url = notion_url %}
+                    {% endif %}
+                {% else %}
+                    {% set embed_url = notion_url %}
+                {% endif %}
+                
+                <iframe 
+                    src="{{ embed_url }}" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    allowfullscreen
+                    class="notion-iframe"
+                    loading="lazy">
+                </iframe>
+            </div>
+            {% else %}
+            <div class="notion-fallback">
+                <h2>🔗 Configuration requise</h2>
+                <p>Pour afficher votre page Notion, vous devez :</p>
+                <ol style="text-align: left; max-width: 600px; margin: 0 auto 2rem;">
+                    <li style="margin-bottom: 0.5rem;">Rendre votre page Notion publique : <br>
+                        <code style="display: block; margin-top: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 4px;">
+                            Share → Publish to web → Copy link
+                        </code>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">Obtenir l'URL d'embed : <br>
+                        <code style="display: block; margin-top: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 4px;">
+                            Share → Intégrer cette page → Copier l'URL de l'iframe
+                        </code>
+                        <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
+                            L'URL doit contenir <code>/ebd/</code> dans le chemin (ex: ...notion.site/ebd/...)
+                        </small>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">Dans <code>web/app.py</code>, ligne ~410, remplacez l'URL :<br>
+                        <code style="display: block; margin-top: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 4px;">
+                            notion_url = 'https://...notion.site/ebd/votre-id'
+                        </code>
+                    </li>
+                    <li>Ou définir la variable d'environnement <code>NOTION_URL</code></li>
+                </ol>
+                <p style="margin-top: 2rem;">
+                    <strong>Alternative :</strong> Vous pouvez aussi ajouter un lien direct vers votre page Notion.
+                </p>
+                <a href="https://www.notion.so" target="_blank" class="notion-link">Ouvrir Notion →</a>
+            </div>
+            {% endif %}
+            
+            <div class="notion-actions" style="margin-top: 2rem; text-align: center;">
+                <a href="{{ url_for('index') }}" class="back-btn">← Retour à l'accueil</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Veille Technologique - IA03 - Groupe 4</p>
+            <p>Naya Mattar, Martin Halbourg</p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction d'Autisme - Veille Technologique</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🧠 Prédiction d'Autisme</h1>
+                <p class="subtitle">Modèle de Machine Learning pour le dépistage</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Formulaire de Dépistage</h2>
+                <p>Remplissez les informations ci-dessous pour obtenir une estimation du risque d'autisme</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+                    ⚠️ <strong>Note importante:</strong> Ce modèle est à des fins de recherche uniquement et ne remplace pas un diagnostic médical professionnel.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prediction Form -->
+    <section class="prediction-section">
+        <div class="container">
+            <form method="POST" action="{{ url_for('predict') }}" class="prediction-form">
+                
+                <!-- Scores A1-A10 -->
+                <div class="form-section">
+                    <h3 class="form-section-title">📋 Scores de Dépistage (A1-A10)</h3>
+                    <p class="form-section-description">Répondez par Oui (1) ou Non (0) à chaque question</p>
+                    <div class="scores-grid">
+                        {% for i in range(1, 11) %}
+                        <div class="form-group">
+                            <label for="A{{ i }}_Score">A{{ i }} Score</label>
+                            <select name="A{{ i }}_Score" id="A{{ i }}_Score" required>
+                                <option value="0">Non (0)</option>
+                                <option value="1">Oui (1)</option>
+                            </select>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Informations démographiques -->
+                <div class="form-section">
+                    <h3 class="form-section-title">👤 Informations Démographiques</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Âge</label>
+                            <input type="number" name="age" id="age" min="0" max="120" step="0.1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">Genre</label>
+                            <select name="gender" id="gender" required>
+                                <option value="">Sélectionnez...</option>
+                                {% for gender in options.genders %}
+                                <option value="{{ gender }}">{{ gender|upper }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ethnicity">Ethnicité</label>
+                            <select name="ethnicity" id="ethnicity" required>
+                                <option value="">Sélectionnez...</option>
+                                {% for ethnicity in options.ethnicities %}
+                                <option value="{{ ethnicity }}">{{ ethnicity }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contry_of_res">Pays de Résidence</label>
+                            <select name="contry_of_res" id="contry_of_res" required>
+                                <option value="">Sélectionnez...</option>
+                                {% for country in options.countries %}
+                                <option value="{{ country }}">{{ country }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Antécédents médicaux -->
+                <div class="form-section">
+                    <h3 class="form-section-title">🏥 Antécédents Médicaux</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="jaundice">Jaunisse à la naissance</label>
+                            <select name="jaundice" id="jaundice" required>
+                                <option value="no">Non</option>
+                                <option value="yes">Oui</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="austim">Antécédents familiaux d'autisme</label>
+                            <select name="austim" id="austim" required>
+                                <option value="no">Non</option>
+                                <option value="yes">Oui</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autres informations -->
+                <div class="form-section">
+                    <h3 class="form-section-title">ℹ️ Autres Informations</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="used_app_before">A déjà utilisé l'application</label>
+                            <select name="used_app_before" id="used_app_before" required>
+                                <option value="no">Non</option>
+                                <option value="yes">Oui</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="relation">Relation avec la personne</label>
+                            <select name="relation" id="relation" required>
+                                <option value="">Sélectionnez...</option>
+                                {% for relation in options.relations %}
+                                <option value="{{ relation }}">{{ relation }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">🔍 Obtenir la Prédiction</button>
+                    <a href="{{ url_for('index') }}" class="cancel-btn">Retour à l'accueil</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Veille Technologique - IA03 - Groupe 4</p>
+            <p>Naya Mattar, Martin Halbourg</p>
+        </div>
+    </footer>
+</body>
+</html>
+

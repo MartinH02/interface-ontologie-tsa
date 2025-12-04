@@ -33,32 +33,55 @@
             color: var(--text-secondary);
         }
         
-        .reports-container {
+        /* Tabs */
+        .tabs-container {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 2rem;
+            overflow: hidden;
         }
         
-        .reports-container h2 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .tabs-header {
+            display: flex;
+            background: var(--bg-card-hover);
+            border-bottom: 1px solid var(--border-color);
         }
         
-        .reports-container p {
+        .tab-button {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: none;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button:hover {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background: var(--bg-card);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            min-height: 70vh;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
         
         /* PDF viewer */
-        .pdf-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        
         .pdf-card {
             background: var(--bg-card-hover);
             border: 1px solid var(--border-color);
@@ -107,8 +130,18 @@
         }
         
         @media (max-width: 768px) {
-            .pdf-container {
-                grid-template-columns: 1fr;
+            .tabs-header {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                border-bottom: 1px solid var(--border-color);
+                border-right: none;
+            }
+            
+            .tab-button.active {
+                border-bottom-color: var(--border-color);
+                border-left: 3px solid var(--primary-color);
             }
         }
     </style>
@@ -132,14 +165,18 @@
                 <p>Consultez les rapports de contexte et le rapport final de veille</p>
             </div>
             
-            <div class="reports-container">
-                <h2>Rapports de Veille</h2>
-                <p>
-                    Consultez les rapports de contexte et le rapport final de veille.
-                </p>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-button active" onclick="switchTab('contexte')">
+                        📋 Rapport de Contexte
+                    </button>
+                    <button class="tab-button" onclick="switchTab('rapport')">
+                        📊 Rapport Final
+                    </button>
+                </div>
                 
-                <div class="pdf-container">
-                    <!-- Rapport de Contexte -->
+                <!-- Onglet Rapport de Contexte -->
+                <div id="tab-contexte" class="tab-content active">
                     {% if has_contexte %}
                     <div class="pdf-card">
                         <h3>📋 Rapport de Contexte de Veille</h3>
@@ -153,9 +190,15 @@
                             Ouvrir dans un nouvel onglet →
                         </a>
                     </div>
+                    {% else %}
+                    <p style="color: var(--text-secondary); text-align: center; padding: 2rem;">
+                        Le rapport de contexte n'est pas disponible.
+                    </p>
                     {% endif %}
-                    
-                    <!-- Rapport Final de Veille -->
+                </div>
+                
+                <!-- Onglet Rapport Final -->
+                <div id="tab-rapport" class="tab-content">
                     {% if has_rapport %}
                     <div class="pdf-card">
                         <h3>📊 Rapport Final de Veille</h3>
@@ -169,6 +212,10 @@
                             Ouvrir dans un nouvel onglet →
                         </a>
                     </div>
+                    {% else %}
+                    <p style="color: var(--text-secondary); text-align: center; padding: 2rem;">
+                        Le rapport final n'est pas disponible.
+                    </p>
                     {% endif %}
                 </div>
             </div>
@@ -186,6 +233,28 @@
             <p>Naya Mattar, Martin Halbourg</p>
         </div>
     </footer>
+
+    <script>
+        function switchTab(tabName) {
+            // Masquer tous les contenus
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Désactiver tous les boutons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Afficher le contenu sélectionné
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            // Activer le bouton correspondant
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
 

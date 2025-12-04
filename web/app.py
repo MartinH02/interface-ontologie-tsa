@@ -515,7 +515,7 @@ def veille_page():
     """Page avec les rapports de veille"""
     # Chemins des PDFs
     rapport_contexte = os.path.join(PARENT_DIR, 'IA03_Veille_contexte.pdf')
-    rapport_veille = os.path.join(PARENT_DIR, 'IA03_Rapport_de_veille.pdf')
+    rapport_veille = os.path.join(PARENT_DIR, 'IA03___Rapport_de_veille.pdf')
     
     # Vérifier si les fichiers existent
     has_contexte = os.path.exists(rapport_contexte)
@@ -531,7 +531,7 @@ def serve_pdf(filename):
     if filename == 'IA03_Veille_contexte.pdf':
         pdf_path = os.path.join(PARENT_DIR, 'IA03_Veille_contexte.pdf')
     elif filename == 'IA03_Rapport_de_veille.pdf':
-        pdf_path = os.path.join(PARENT_DIR, 'IA03_Rapport_de_veille.pdf')
+        pdf_path = os.path.join(PARENT_DIR, 'IA03___Rapport_de_veille.pdf')
     else:
         return "Fichier non trouvé", 404
     

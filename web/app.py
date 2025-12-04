@@ -56,8 +56,12 @@ def load_and_train_model():
         print(f"Erreur lors de l'entraînement du modèle: {e}")
         return False
 
-# Charger le modèle au démarrage
-load_and_train_model()
+# Charger le modèle au démarrage (ne bloque pas si les fichiers ne sont pas disponibles)
+try:
+    load_and_train_model()
+except Exception as e:
+    print(f"Note: Le modèle de prédiction n'a pas pu être chargé: {e}")
+    print("L'application continue sans le modèle de prédiction.")
 
 def load_articles():
     """Charge les 5 articles les plus pertinents"""

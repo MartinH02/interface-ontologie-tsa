@@ -512,12 +512,7 @@ def ontology_viewer():
 
 @app.route('/veille')
 def veille_page():
-    """Page avec onglets pour le suivi et les rapports de veille"""
-    # URL de la page Notion publique
-    notion_url = os.environ.get('NOTION_URL', '')
-    if not notion_url:
-        notion_url = 'https://bitter-chef-13a.notion.site/ebd/2b5556f762b3804cad8ef22f038adb26'
-    
+    """Page avec les rapports de veille"""
     # Chemins des PDFs
     rapport_contexte = os.path.join(PARENT_DIR, 'IA03_Veille_contexte.pdf')
     rapport_veille = os.path.join(PARENT_DIR, 'IA03_Rapport_de_veille.pdf')
@@ -527,7 +522,6 @@ def veille_page():
     has_rapport = os.path.exists(rapport_veille)
     
     return render_template('veille_page.html', 
-                         notion_url=notion_url,
                          has_contexte=has_contexte,
                          has_rapport=has_rapport)
 

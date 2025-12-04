@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyse de Veille - Suivi et Rapports</title>
+    <title>Rapports de Veille</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -33,68 +33,22 @@
             color: var(--text-secondary);
         }
         
-        /* Tabs */
-        .tabs-container {
+        .reports-container {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            overflow: hidden;
-        }
-        
-        .tabs-header {
-            display: flex;
-            background: var(--bg-card-hover);
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .tab-button {
-            flex: 1;
-            padding: 1rem 2rem;
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .tab-button:hover {
-            background: var(--bg-card);
-            color: var(--text-primary);
-        }
-        
-        .tab-button.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            background: var(--bg-card);
-        }
-        
-        .tab-content {
-            display: none;
             padding: 2rem;
-            min-height: 70vh;
         }
         
-        .tab-content.active {
-            display: block;
+        .reports-container h2 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
         
-        /* Notion iframe */
-        .notion-wrapper {
-            width: 100%;
-            height: 70vh;
-            min-height: 600px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .notion-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
+        .reports-container p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
         }
         
         /* PDF viewer */
@@ -152,27 +106,7 @@
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
         }
         
-        .notion-fallback {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-secondary);
-        }
-        
         @media (max-width: 768px) {
-            .tabs-header {
-                flex-direction: column;
-            }
-            
-            .tab-button {
-                border-bottom: 1px solid var(--border-color);
-                border-right: none;
-            }
-            
-            .tab-button.active {
-                border-bottom-color: var(--border-color);
-                border-left: 3px solid var(--primary-color);
-            }
-            
             .pdf-container {
                 grid-template-columns: 1fr;
             }
@@ -184,8 +118,8 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <h1 class="logo">📊 Analyse de Veille</h1>
-                <p class="subtitle">Suivi et Rapports de Veille Technologique</p>
+                <h1 class="logo">📊 Rapports de Veille</h1>
+                <p class="subtitle">Rapports de Veille Technologique</p>
             </div>
         </div>
     </header>
@@ -194,87 +128,48 @@
     <section class="veille-section">
         <div class="container">
             <div class="veille-header">
-                <h1>📚 Veille Technologique</h1>
-                <p>Suivez l'évolution de la veille et consultez les rapports</p>
+                <h1>📚 Rapports de Veille</h1>
+                <p>Consultez les rapports de contexte et le rapport final de veille</p>
             </div>
             
-            <div class="tabs-container">
-                <div class="tabs-header">
-                    <button class="tab-button active" onclick="switchTab('suivi')">
-                        📝 Suivi de Veille
-                    </button>
-                    <button class="tab-button" onclick="switchTab('rapport')">
-                        📄 Rapport de Veille
-                    </button>
-                </div>
+            <div class="reports-container">
+                <h2>Rapports de Veille</h2>
+                <p>
+                    Consultez les rapports de contexte et le rapport final de veille.
+                </p>
                 
-                <!-- Onglet Suivi de Veille -->
-                <div id="tab-suivi" class="tab-content active">
-                    <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Suivi de Veille</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                        Suivez l'évolution de votre veille technologique en temps réel via Notion.
-                    </p>
-                    
-                    {% if notion_url %}
-                    <div class="notion-wrapper">
+                <div class="pdf-container">
+                    <!-- Rapport de Contexte -->
+                    {% if has_contexte %}
+                    <div class="pdf-card">
+                        <h3>📋 Rapport de Contexte de Veille</h3>
+                        <p>Premier rapport définissant le contexte et les objectifs de la veille technologique sur l'apport des technologies NLP et des outils numériques dans l'accompagnement des personnes atteintes de TSA.</p>
                         <iframe 
-                            src="{{ notion_url }}" 
-                            width="100%" 
-                            height="600" 
-                            frameborder="0" 
-                            allowfullscreen
-                            class="notion-iframe"
-                            loading="lazy">
+                            src="{{ url_for('serve_pdf', filename='IA03_Veille_contexte.pdf') }}#toolbar=1" 
+                            class="pdf-viewer"
+                            type="application/pdf">
                         </iframe>
-                    </div>
-                    {% else %}
-                    <div class="notion-fallback">
-                        <h3>Configuration requise</h3>
-                        <p>Veuillez configurer l'URL Notion dans <code>web/app.py</code></p>
+                        <a href="{{ url_for('serve_pdf', filename='IA03_Veille_contexte.pdf') }}" target="_blank" class="pdf-link">
+                            Ouvrir dans un nouvel onglet →
+                        </a>
                     </div>
                     {% endif %}
-                </div>
-                
-                <!-- Onglet Rapport de Veille -->
-                <div id="tab-rapport" class="tab-content">
-                    <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Rapport de Veille</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                        Consultez les rapports de contexte et le rapport final de veille.
-                    </p>
                     
-                    <div class="pdf-container">
-                        <!-- Rapport de Contexte -->
-                        {% if has_contexte %}
-                        <div class="pdf-card">
-                            <h3>📋 Rapport de Contexte de Veille</h3>
-                            <p>Premier rapport définissant le contexte et les objectifs de la veille technologique sur l'apport des technologies NLP et des outils numériques dans l'accompagnement des personnes atteintes de TSA.</p>
-                            <iframe 
-                                src="{{ url_for('serve_pdf', filename='IA03_Veille_contexte.pdf') }}#toolbar=1" 
-                                class="pdf-viewer"
-                                type="application/pdf">
-                            </iframe>
-                            <a href="{{ url_for('serve_pdf', filename='IA03_Veille_contexte.pdf') }}" target="_blank" class="pdf-link">
-                                Ouvrir dans un nouvel onglet →
-                            </a>
-                        </div>
-                        {% endif %}
-                        
-                        <!-- Rapport Final de Veille -->
-                        {% if has_rapport %}
-                        <div class="pdf-card">
-                            <h3>📊 Rapport Final de Veille</h3>
-                            <p>Rapport complet de l'analyse de veille avec les méthodes de collecte, la structuration du flux d'articles, la mise en place de l'ontologie et l'évaluation des résultats.</p>
-                            <iframe 
-                                src="{{ url_for('serve_pdf', filename='IA03_Rapport_de_veille.pdf') }}#toolbar=1" 
-                                class="pdf-viewer"
-                                type="application/pdf">
-                            </iframe>
-                            <a href="{{ url_for('serve_pdf', filename='IA03_Rapport_de_veille.pdf') }}" target="_blank" class="pdf-link">
-                                Ouvrir dans un nouvel onglet →
-                            </a>
-                        </div>
-                        {% endif %}
+                    <!-- Rapport Final de Veille -->
+                    {% if has_rapport %}
+                    <div class="pdf-card">
+                        <h3>📊 Rapport Final de Veille</h3>
+                        <p>Rapport complet de l'analyse de veille avec les méthodes de collecte, la structuration du flux d'articles, la mise en place de l'ontologie et l'évaluation des résultats.</p>
+                        <iframe 
+                            src="{{ url_for('serve_pdf', filename='IA03_Rapport_de_veille.pdf') }}#toolbar=1" 
+                            class="pdf-viewer"
+                            type="application/pdf">
+                        </iframe>
+                        <a href="{{ url_for('serve_pdf', filename='IA03_Rapport_de_veille.pdf') }}" target="_blank" class="pdf-link">
+                            Ouvrir dans un nouvel onglet →
+                        </a>
                     </div>
+                    {% endif %}
                 </div>
             </div>
             
@@ -291,28 +186,6 @@
             <p>Naya Mattar, Martin Halbourg</p>
         </div>
     </footer>
-
-    <script>
-        function switchTab(tabName) {
-            // Masquer tous les contenus
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Désactiver tous les boutons
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            // Afficher le contenu sélectionné
-            document.getElementById(`tab-${tabName}`).classList.add('active');
-            
-            // Activer le bouton correspondant
-            event.target.classList.add('active');
-        }
-    </script>
 </body>
 </html>
 

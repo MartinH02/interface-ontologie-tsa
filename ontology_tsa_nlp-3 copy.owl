@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/ont/tsa-nlp#"
+     xml:base="http://example.org/ont/tsa-nlp"
+     xmlns:ns3="http://example.org/ont/tsa-nlp"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.org/ont/tsa-nlp#">
+        <rdfs:label>Ontologie TSA et Outils Numériques</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#aBesoinDe -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#aBesoinDe">
+        <rdfs:label>aBesoinDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#cadreIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#cadreIntervention">
+        <rdfs:label>cadreIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#cibleComportement -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#cibleComportement">
+        <rdfs:label>cibleComportement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#cibleParIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#cibleParIntervention">
+        <rdfs:label>cibleParIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#concerneDomaine -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#concerneDomaine">
+        <rdfs:label>concerneDomaine</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#conduitIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#conduitIntervention">
+        <rdfs:label>conduitIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#conduitPar -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#conduitPar">
+        <rdfs:label>conduitPar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#doitEtreIntegreeDansOutil -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#doitEtreIntegreeDansOutil">
+        <rdfs:label>doitEtreIntegreeDansOutil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estAidePar -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estAidePar">
+        <rdfs:label>estAidePar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estCiblePar -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estCiblePar">
+        <rdfs:label>estCiblePar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estImplementeeDans -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estImplementeeDans">
+        <rdfs:label>estImplementeeDans</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estLieA -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estLieA">
+        <rdfs:label>estLieA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estLieATrouble -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estLieATrouble">
+        <rdfs:label>estLieATrouble</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estMiseEnOeuvreParProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estMiseEnOeuvreParProcedure">
+        <rdfs:label>estMiseEnOeuvreParProcedure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estParentDe -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estParentDe">
+        <rdfs:label>estParentDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estSatisfaitPar -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estSatisfaitPar">
+        <rdfs:label>estSatisfaitPar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#estSoutenuePar -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#estSoutenuePar">
+        <rdfs:label>estSoutenuePar</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#evalueAvec -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#evalueAvec">
+        <rdfs:label>evalueAvec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#evalueParDomaine -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#evalueParDomaine">
+        <rdfs:label>evalueParDomaine</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#fonctionneSur -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#fonctionneSur">
+        <rdfs:label>fonctionneSur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#implementeTechnologie -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#implementeTechnologie">
+        <rdfs:label>implementeTechnologie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#necessiteSupport -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#necessiteSupport">
+        <rdfs:label>necessiteSupport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#presenteTrouble -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#presenteTrouble">
+        <rdfs:label>presenteTrouble</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#recommandeOutil -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#recommandeOutil">
+        <rdfs:label>recommandeOutil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#repondABesoin -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#repondABesoin">
+        <rdfs:label>repondABesoin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#soutientIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#soutientIntervention">
+        <rdfs:label>soutientIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#suitIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#suitIntervention">
+        <rdfs:label>suitIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#suitPersonneTSA -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#suitPersonneTSA">
+        <rdfs:label>suitPersonneTSA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#supporteOutil -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#supporteOutil">
+        <rdfs:label>supporteOutil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseDansIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseDansIntervention">
+        <rdfs:label>utiliseDansIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseOutil -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseOutil">
+        <rdfs:label>utiliseOutil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseOutilAvec -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseOutilAvec">
+        <rdfs:label>utiliseOutilAvec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseSupport -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseSupport">
+        <rdfs:label>utiliseSupport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseTechnologie -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseTechnologie">
+        <rdfs:label>utiliseTechnologie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#utiliseeDansIntervention -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/ont/tsa-nlp#utiliseeDansIntervention">
+        <rdfs:label>utiliseeDansIntervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <!-- http://example.org/ont/tsa-nlp#age -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#age">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#dateNaissance -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#dateNaissance">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>dateNaissance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#description -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#lien -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#lien">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+                    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Procedure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>lien</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#niveauSeverite -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#niveauSeverite">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>niveauSeverite</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+
+    <!-- http://example.org/ont/tsa-nlp#scoreADI -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#scoreADI">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>scoreADI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#scoreADOS -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/ont/tsa-nlp#scoreADOS">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>scoreADOS</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Applications -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Applications">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>Applications</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#AspectClinique -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#AspectClinique">
+        <rdfs:label>AspectClinique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Besoin">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#AspectClinique"/>
+        <rdfs:label>Besoin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#BesoinsEnfantTSA -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Besoin"/>
+        <rdfs:label>BesoinsEnfantTSA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#BesoinsParents -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#BesoinsParents">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Besoin"/>
+        <rdfs:label>BesoinsParents</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Comportement -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Comportement">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#AspectClinique"/>
+        <rdfs:label>Comportement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#DispositifCAA -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#DispositifCAA">
+        <rdfs:label>DispositifCAA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#DomaineClinique -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#DomaineClinique">
+        <rdfs:label>DomaineClinique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Enseignant -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Enseignant">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Professionnel"/>
+        <rdfs:label>Enseignant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Ergotherapie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Ergotherapie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#IntelligenceArtificielleConversationnelle -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#IntelligenceArtificielleConversationnelle">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>IntelligenceArtificielleConversationnelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#InterfaceCerveauOrdinateur -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#InterfaceCerveauOrdinateur">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>InterfaceCerveauOrdinateur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Intervention -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Intervention">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#AspectClinique"/>
+        <rdfs:label>Intervention</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#JeuSerieux -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#JeuSerieux">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>JeuSerieux</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Kinesitherapie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Kinesitherapie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Neurologie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Neurologie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ObjetConnecte -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#ObjetConnecte">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>ObjetConnecte</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Orthophonie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Orthophonie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Orthophoniste -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Orthophoniste">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Professionnel"/>
+        <rdfs:label>Orthophoniste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#OutilEvaluation -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#OutilEvaluation">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>OutilEvaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#OutilNumerique -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#OutilNumerique">
+        <rdfs:label>OutilNumerique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Parent -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Parent">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Personne"/>
+        <rdfs:label>Parent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Pedopsychiatrie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Pedopsychiatrie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Personne -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Personne">
+        <rdfs:label>Personne</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#PersonneTSA -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#PersonneTSA">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Personne"/>
+        <rdfs:label>PersonneTSA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Procedure -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Procedure">
+        <rdfs:label>Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Professionnel -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Professionnel">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Personne"/>
+        <rdfs:label>Professionnel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychologie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Psychologie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychologue -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Psychologue">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Professionnel"/>
+        <rdfs:label>Psychologue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychomotricite -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Psychomotricite">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#DomaineClinique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#RealiteAugmentee -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#RealiteAugmentee">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>RealiteAugmentee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#RealiteVirtuelle -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#RealiteVirtuelle">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>RealiteVirtuelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#RobotSocial -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#RobotSocial">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>RobotSocial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SupportNumerique -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#SupportNumerique">
+        <rdfs:label>SupportNumerique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SystemeCaptationMouvement -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#SystemeCaptationMouvement">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>SystemeCaptationMouvement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SystemeMonitoring -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#SystemeMonitoring">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>SystemeMonitoring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SystemePlanificationVisuelle -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#SystemePlanificationVisuelle">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>SystemePlanificationVisuelle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SystemeVR_AR -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#SystemeVR_AR">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#OutilNumerique"/>
+        <rdfs:label>SystemeVR_AR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TechnologieMouvement -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#TechnologieMouvement">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>TechnologieMouvement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TechnologieNLP -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#TechnologieNLP">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>TechnologieNLP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TechnologieVision -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#TechnologieVision">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Technologies"/>
+        <rdfs:label>TechnologieVision</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Technologies -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#Technologies">
+        <rdfs:label>Technologies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TherapeuteQualifie -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#TherapeuteQualifie">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#Professionnel"/>
+        <rdfs:label>TherapeuteQualifie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleAssocieTSA -->
+
+    <owl:Class rdf:about="http://example.org/ont/tsa-nlp#TroubleAssocieTSA">
+        <rdfs:subClassOf rdf:resource="http://example.org/ont/tsa-nlp#AspectClinique"/>
+        <rdfs:label>TroubleAssocieTSA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ABA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ABA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Procedure"/>
+        <cadreIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <cadreIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <cadreIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <cadreIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <cadreIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <doitEtreIntegreeDansOutil rdf:resource="http://example.org/ont/tsa-nlp#ABC_Data_Collector"/>
+        <doitEtreIntegreeDansOutil rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <description>Applied Behavior Analysis - Méthode d&apos;intervention comportementale intensive basée sur les principes de l&apos;analyse appliquée du comportement, utilisée pour enseigner des compétences et réduire les comportements problématiques chez les personnes avec TSA. Cette procédure structure les interventions en étapes mesurables et utilise le renforcement positif pour favoriser l&apos;apprentissage</description>
+        <lien>https://dumas.ccsd.cnrs.fr/dumas-02101558/file/Bordenave%20Sophie.%20M%C3%A9moire.%20Orthophonie.%20%28UPJV%29.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ABC_Data_Collector -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ABC_Data_Collector">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeMonitoring"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Smartphone"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionStereotypies"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+        <description>Application de collecte de données comportementales utilisant le modèle ABC (Antécédent-Comportement-Conséquence) pour analyser les comportements des personnes avec TSA. Facilite l&apos;identification des déclencheurs et des conséquences pour adapter les interventions</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2029/1-s2.0-S0891422213002308-main.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#AR -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#AR">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RealiteAugmentee"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Microsoft_HoloLens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#AnalyseMarche -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#AnalyseMarche">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieMouvement"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Myo_Armband"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#AppAutismeSpeech -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#AppAutismeSpeech">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceVocale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <description>Application spécialisée utilisant le traitement du langage naturel et la reconnaissance vocale pour soutenir le développement du langage et de la communication chez les enfants avec TSA. Elle propose des exercices structurés et progressifs</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Articels_veille_que_ai_lu/children-08-01001.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Apple_Watch_TSA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Apple_Watch_TSA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#ObjetConnecte"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+        <description>Montre connectée adaptée pour le suivi des personnes avec TSA, permettant de monitorer l&apos;activité physique, le sommeil, le stress et les comportements. Peut envoyer des alertes et des rappels pour faciliter l&apos;autonomie et la sécurité</description>
+        <lien>https://scholarshare.temple.edu/server/api/core/bitstreams/e6d6a875-f051-4df8-8be7-a1eb37af00b0/content</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Auticiel_Agenda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Auticiel_Agenda">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemePlanificationVisuelle"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Smartphone"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Cognitif"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <description>Application d&apos;agenda visuel conçue spécifiquement pour les personnes avec TSA. Permet de structurer le temps avec des pictogrammes, des photos et des séquences visuelles pour réduire l&apos;anxiété et améliorer l&apos;autonomie dans la gestion des activités quotidiennes</description>
+        <lien>https://www.auticiel.com/fr/agenda/</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#AutisMate -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#AutisMate">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#SyntheseVocale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <description>Application de communication et d&apos;apprentissage utilisant le traitement du langage naturel et la synthèse vocale pour créer des scénarios sociaux personnalisés et des exercices de communication adaptés aux besoins des personnes avec TSA</description>
+        <lien>https://www.researchgate.net/publication/333965915_Exploring_the_Effects_of_the_AutisMate_Application_on_a_12_year-old_boy_with_ASD_-_A_Case_Study</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#BCI_Communication -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#BCI_Communication">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#InterfaceCerveauOrdinateur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#BehaviorTracker_Pro -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeMonitoring"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Smartphone"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionStereotypies"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+        <description>Application mobile professionnelle permettant de suivre et analyser les comportements des personnes avec TSA. Permet l&apos;enregistrement en temps réel, l&apos;analyse des données comportementales et la génération de rapports pour les professionnels et les familles</description>
+        <lien>https://pmc.ncbi.nlm.nih.gov/articles/PMC3120079/pdf/jaba-44-02-393.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_Cognitif -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_Cognitif">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_CommunicationNonVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_CommunicationNonVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Orthophonie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Orthophonie"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#GoTalk_Now"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#AutisMate"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Pictello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_Compréhension -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_Compréhension">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsParents"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#TSARA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsParents"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#ABC_Data_Collector"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Apple_Watch_TSA"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#EchelleBOT2"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#EchelleDCDQ"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Garmin_Vivosmart_TSA"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_Emotionnel -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_Emotionnel">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Pedopsychiatrie"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_Motricite -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_Motricite">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Kinesitherapie"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Psychomotricite"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Leap_Motion"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Microsoft_HoloLens"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Myo_Armband"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Besoin_Social -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Besoin_Social">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#BesoinsEnfantTSA"/>
+        <estLieA rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Kaspar"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Microsoft_HoloLens"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Keepon"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#Milo"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#SIGUEME"/>
+        <estSatisfaitPar rdf:resource="http://example.org/ont/tsa-nlp#SmileMaze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementCognitif -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementCognitif">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleCognitif"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementCommunicationNonVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementCommunicationNonVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleCommunicationNonVerbale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementCommunicationVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementCommunicationVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleCommunicationVerbale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementEmotionnel -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementEmotionnel">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleEmotionnel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementMotricite -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementMotricite">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleMoteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ComportementSocial -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ComportementSocial">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Comportement"/>
+        <estCiblePar rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <estLieATrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleSocial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieVision"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Kaspar"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Keepon"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#DetectionPostures -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#DetectionPostures">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieVision"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#DetectionStereotypies -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#DetectionStereotypies">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieMouvement"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#ABC_Data_Collector"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Garmin_Vivosmart_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Orthophoniste_Marc -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Orthophoniste_Marc">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <evalueAvec rdf:resource="http://example.org/ont/tsa-nlp#EchelleBOT2"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#GoTalk_Now"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Lucas_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Orthophoniste_Sandrine -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Orthophoniste_Sandrine">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Pictello"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Eve_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#EarlyBot -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#EarlyBot">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#IntelligenceArtificielleConversationnelle"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#EchelleBOT2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#EchelleBOT2">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#OutilEvaluation"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#EchelleDCDQ -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#EchelleDCDQ">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#OutilEvaluation"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Enseignant_Paul -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Enseignant_Paul">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Enseignant"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Eve_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Enseignant_Pierre -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Enseignant_Pierre">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Enseignant"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Lucas_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Ergotherapie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Ergotherapie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Ergotherapie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Eve_TSA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Eve_TSA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#PersonneTSA"/>
+        <aBesoinDe rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Cognitif"/>
+        <aBesoinDe rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <estSoutenuePar rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste_Sandrine"/>
+        <estSoutenuePar rdf:resource="http://example.org/ont/tsa-nlp#Psychologue_Jean"/>
+        <presenteTrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleCognitif"/>
+        <presenteTrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleSocial"/>
+        <suitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <suitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <utiliseSupport rdf:resource="http://example.org/ont/tsa-nlp#Ordinateur"/>
+        <utiliseSupport rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <age>10</age>
+        <dateNaissance>2014-07-22</dateNaissance>
+        <description>Enfant avec trouble du spectre de l&apos;autisme nécessitant un accompagnement spécialisé pour les compétences sociales et cognitives</description>
+        <niveauSeverite>léger</niveauSeverite>
+        <scoreADOS>8.3</scoreADOS>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceCognitif -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceCognitif">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementCognitif"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Psychologue_Jean"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementCommunicationNonVerbale"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Orthophonie"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste_Sandrine"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementCommunicationVerbale"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Orthophonie"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste_Marc"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceVocale"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceEmotionnel -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceEmotionnel">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementEmotionnel"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Pedopsychiatrie"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Therapeute_Marie"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceMotricite -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceMotricite">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementMotricite"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Kinesitherapie"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Psychomotricite"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Therapeute_Laurent"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Leap_Motion"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#AnalyseMarche"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceGestes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ExerciceSocial -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ExerciceSocial">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Intervention"/>
+        <cibleComportement rdf:resource="http://example.org/ont/tsa-nlp#ComportementSocial"/>
+        <concerneDomaine rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <conduitPar rdf:resource="http://example.org/ont/tsa-nlp#Psychologue_Francois"/>
+        <estMiseEnOeuvreParProcedure rdf:resource="http://example.org/ont/tsa-nlp#ABA"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <utiliseOutil rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales"/>
+        <utiliseTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Garmin_Vivosmart_TSA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Garmin_Vivosmart_TSA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#ObjetConnecte"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionStereotypies"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+        <description>Bracelet d&apos;activité connecté utilisé pour le suivi physiologique des personnes avec TSA. Mesure l&apos;activité physique, la fréquence cardiaque, le sommeil et peut détecter des patterns de stress ou d&apos;anxiété pour adapter les interventions</description>
+        <lien>https://pmc.ncbi.nlm.nih.gov/articles/PMC6308558/pdf/sensors-18-04271.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#GoTalk_Now -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#GoTalk_Now">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#SyntheseVocale"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <description>Application de communication alternative utilisant la synthèse vocale pour permettre aux personnes avec TSA de communiquer via des tableaux de communication personnalisables avec images, photos et symboles. Facilite l&apos;expression des besoins quotidiens</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2021/MuharibCorreaWoodHaughneyAheadofPrint2018-1.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Kaspar -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Kaspar">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RobotSocial"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <description>Robot humanoïde de taille enfant conçu spécifiquement pour l&apos;intervention auprès d&apos;enfants avec autisme. Équipé de reconnaissance faciale et de détection d&apos;émotions, il aide à développer les compétences sociales et émotionnelles dans un environnement sécurisé et prévisible</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2023/TheIterativeDevelopmentoftheHumanoidRobotKaspar-AnAssistiveRobotforChildrenwithAutism.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Keepon -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Keepon">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RobotSocial"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <description>Robot interactif simple et expressif conçu pour l&apos;intervention sociale auprès d&apos;enfants avec TSA. Sa simplicité et sa capacité à exprimer des émotions de base en font un outil efficace pour travailler l&apos;attention conjointe et les interactions sociales</description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Kinect -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Kinect">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeCaptationMouvement"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionPostures"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceGestes"/>
+        <necessiteSupport rdf:resource="http://example.org/ont/tsa-nlp#Ordinateur"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Motricite"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <description>Système de captation de mouvement sans contact utilisant des caméras infrarouges pour suivre les mouvements du corps entier. Utilisé en thérapie motrice pour évaluer et entraîner la connaissance du corps, la coordination et la motricité globale chez les personnes avec TSA via des jeux interactifs</description>
+        <lien>file:///C:/Users/halbo/Downloads/nadel-2018-evaluer-et-entrainer-la-connaissance-du-corps-dans-lautisme-via-kinect-et-pictogram-room.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Kinesitherapie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Kinesitherapie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Kinesitherapie"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <evalueParDomaine rdf:resource="http://example.org/ont/tsa-nlp#EchelleBOT2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Leap_Motion -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Leap_Motion">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeCaptationMouvement"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceGestes"/>
+        <necessiteSupport rdf:resource="http://example.org/ont/tsa-nlp#Ordinateur"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Motricite"/>
+        <description>Capteur de mouvement des mains utilisant des caméras infrarouges pour suivre précisément les mouvements des doigts et des mains. Utilisé pour développer la motricité fine chez les enfants avec TSA à travers des jeux de correspondance et des exercices interactifs adaptés</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2025/ASeriesofLeapMotion-BasedMatchingGamesforEnhancingtheFineMotorSkillsofChildrenwithAutism.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Lucas_TSA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Lucas_TSA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#PersonneTSA"/>
+        <aBesoinDe rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <aBesoinDe rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Motricite"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <estAidePar rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <estSoutenuePar rdf:resource="http://example.org/ont/tsa-nlp#Orthophoniste_Marc"/>
+        <estSoutenuePar rdf:resource="http://example.org/ont/tsa-nlp#Psychologue_Francois"/>
+        <presenteTrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleCommunicationVerbale"/>
+        <presenteTrouble rdf:resource="http://example.org/ont/tsa-nlp#TroubleMoteur"/>
+        <suitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <suitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <utiliseSupport rdf:resource="http://example.org/ont/tsa-nlp#Smartphone"/>
+        <utiliseSupport rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <age>8</age>
+        <dateNaissance>2016-03-15</dateNaissance>
+        <description>Enfant avec trouble du spectre de l&apos;autisme nécessitant un accompagnement spécialisé pour la communication et la motricité</description>
+        <niveauSeverite>modéré</niveauSeverite>
+        <scoreADOS>12.5</scoreADOS>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Makaton -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Makaton">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#DispositifCAA"/>
+        <description>Programme de communication multimodale combinant la parole, les signes et les symboles visuels. Utilisé pour soutenir la communication des personnes avec TSA en associant des gestes signés à la parole et des pictogrammes, facilitant ainsi la compréhension et l&apos;expression</description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Microsoft_HoloLens -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Microsoft_HoloLens">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeVR_AR"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#AR"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Motricite"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <description>Casque de réalité augmentée permettant de superposer des informations numériques sur l&apos;environnement réel. Utilisé pour l&apos;entraînement des compétences motrices et sociales chez les personnes avec TSA, offrant des guidages visuels et des retours adaptés en temps réel</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2027/fpubh-13-1628741.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Milo -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Milo">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RobotSocial"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <description>Robot éducatif humanoïde conçu pour enseigner les compétences sociales aux enfants avec TSA. Utilise le traitement du langage naturel et la reconnaissance faciale pour créer des interactions structurées et progressives visant à améliorer la communication et les relations sociales</description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Myo_Armband -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Myo_Armband">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeCaptationMouvement"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#AnalyseMarche"/>
+        <necessiteSupport rdf:resource="http://example.org/ont/tsa-nlp#Ordinateur"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Motricite"/>
+        <description>Bracelet connecté captant les mouvements du bras et de la main via des capteurs électromyographiques et inertiels. Utilisé pour l&apos;entraînement et la rééducation de la motricité fine et des mouvements de la main chez les personnes avec TSA, avec retour en temps réel</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2026/Recognition_of_Hand_Movement_for_Training_Motor_Sk.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Neurologie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Neurologie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Neurologie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Oculus_Quest -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Oculus_Quest">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeVR_AR"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#VR"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Cognitif"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <description>Casque de réalité virtuelle autonome permettant de créer des environnements immersifs contrôlés pour l&apos;entraînement des compétences sociales et cognitives chez les personnes avec TSA. Offre un environnement sécurisé pour pratiquer des situations sociales complexes</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2027/fpubh-13-1628741.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Ordinateur -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Ordinateur">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SupportNumerique"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#TSARA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Orthophonie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Orthophonie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Orthophonie"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SystemeMonitoring"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_DetectionAutismeRapide"/>
+        <description>Système de suivi des progrès intégré à la plateforme Otsimo permettant de monitorer l&apos;évolution des compétences des enfants avec TSA. Génère des rapports détaillés sur les progrès dans différents domaines d&apos;apprentissage</description>
+        <lien>https://pmc.ncbi.nlm.nih.gov/articles/PMC9222948/pdf/ijerph-19-07019.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#PECS -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#PECS">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#DispositifCAA"/>
+        <description>Picture Exchange Communication System - Système de communication par échange d&apos;images développé spécifiquement pour les personnes avec autisme. Méthode structurée en 6 phases permettant d&apos;enseigner la communication fonctionnelle via l&apos;échange de pictogrammes. Favorise l&apos;initiation de la communication et peut servir de base pour développer le langage verbal</description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Parent_Eve1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Parent_Eve1">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Parent"/>
+        <estParentDe rdf:resource="http://example.org/ont/tsa-nlp#Eve_TSA"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#ABC_Data_Collector"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Parent_Eve2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Parent_Eve2">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Parent"/>
+        <estParentDe rdf:resource="http://example.org/ont/tsa-nlp#Eve_TSA"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#TSARA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Parent_Lucas1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Parent_Lucas1">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Parent"/>
+        <estParentDe rdf:resource="http://example.org/ont/tsa-nlp#Lucas_TSA"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Parent_Lucas2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Parent_Lucas2">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Parent"/>
+        <estParentDe rdf:resource="http://example.org/ont/tsa-nlp#Lucas_TSA"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <utiliseOutilAvec rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Pedopsychiatrie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Pedopsychiatrie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Pedopsychiatrie"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Pepper -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Pepper">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RobotSocial"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceGestesVocaux"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <description>Robot humanoïde social de 120 cm équipé de reconnaissance faciale et de traitement du langage naturel. Utilisé pour faciliter les interactions sociales et la communication chez les personnes avec TSA. Le robot peut engager des conversations et adapter son comportement</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2022/Using_the_power_of_memes_The_Pepper_Robot_as_a_com.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Pictello -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Pictello">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#SyntheseVocale"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <description>Application de création d&apos;histoires visuelles et sociales utilisant la synthèse vocale pour créer des récits personnalisés avec photos, vidéos et texte. Aide les personnes avec TSA à comprendre les situations sociales et à développer leurs compétences narratives</description>
+        <lien>https://www.autisme-france.fr/f/8cb314444237c2c02f7cf1010d82d48793cf1133/SYNTHESE_NTIC.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Proloquo2Go -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Proloquo2Go">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceVocale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#SyntheseVocale"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+        <description>Application de communication alternative et augmentée (CAA) sur iPad permettant aux personnes non verbales ou ayant des difficultés de communication de s&apos;exprimer via des symboles visuels et une synthèse vocale. Personnalisable avec des grilles de communication adaptées, elle facilite l&apos;expression des besoins, pensées et émotions pour les personnes avec TSA</description>
+        <lien>file:///C:/Users/halbo/Downloads/SennottBowker2009ASHAPerspectivesonAAC.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychologie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Psychologie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Psychologie"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychologue_Francois -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Psychologue_Francois">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Psychologue"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#TSARA"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Lucas_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychologue_Jean -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Psychologue_Jean">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Psychologue"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <suitPersonneTSA rdf:resource="http://example.org/ont/tsa-nlp#Eve_TSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Psychomotricite -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Psychomotricite">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Psychomotricite"/>
+        <cibleParIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <evalueParDomaine rdf:resource="http://example.org/ont/tsa-nlp#EchelleBOT2"/>
+        <evalueParDomaine rdf:resource="http://example.org/ont/tsa-nlp#EchelleDCDQ"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ReconnaissanceFaciale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieVision"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Kaspar"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Milo"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#RobotNAO"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#SIGUEME"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ReconnaissanceGestes -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ReconnaissanceGestes">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieVision"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Leap_Motion"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ReconnaissanceGestesVocaux -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ReconnaissanceGestesVocaux">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieNLP"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#ReconnaissanceVocale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#ReconnaissanceVocale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieNLP"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#RobotNAO -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#RobotNAO">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RobotSocial"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#DetectionEmotionsFaciales"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceSocial"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <description>Robot humanoïde programmable de 58 cm de hauteur équipé de reconnaissance faciale et de détection d&apos;émotions faciales. Utilisé en thérapie pour améliorer les compétences sociales, la communication et les interactions des enfants avec TSA. Le robot propose des activités structurées et adaptatives</description>
+        <lien>https://hal.science/hal-04327431/document</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SIGUEME -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#SIGUEME">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceFaciale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#SuiviRegard"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationNonVerbale"/>
+        <description>Application utilisant la reconnaissance faciale et le suivi du regard pour aider les enfants avec TSA à améliorer leurs compétences d&apos;attention conjointe et de communication sociale. L&apos;application suit les mouvements oculaires et les expressions faciales pour adapter les interactions</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2020/children-08-01001.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Smartphone -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Smartphone">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SupportNumerique"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#ABC_Data_Collector"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SmileMaze -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#SmileMaze">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#JeuSerieux"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Social"/>
+        <soutientIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <utiliseDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <description>Jeu sérieux conçu pour améliorer les compétences sociales et émotionnelles des enfants avec TSA. Utilise des mécaniques de jeu adaptées pour enseigner la reconnaissance des émotions et les interactions sociales de manière ludique</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2028/Cockburn_FG2008.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SuiviRegard -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#SuiviRegard">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieVision"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#SIGUEME"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#SyntheseVocale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#SyntheseVocale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieNLP"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#AutisMate"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#GoTalk_Now"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Pictello"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TSARA -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TSARA">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#JeuSerieux"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Ordinateur"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_Compréhension"/>
+        <description>Jeu sérieux éducatif en ligne conçu pour sensibiliser et former les professionnels et le grand public à la compréhension de l&apos;autisme. Propose des scénarios interactifs pour mieux comprendre les défis quotidiens des personnes avec TSA</description>
+        <lien>https://www.tsara-autisme.com/</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Tableau_Intéractif_Haptique -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Tableau_Intéractif_Haptique">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SupportNumerique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Tableaux_Communication -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Tableaux_Communication">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#DispositifCAA"/>
+        <description>Supports visuels personnalisables contenant des pictogrammes, photos ou symboles organisés thématiquement. Permettent aux personnes avec TSA de pointer ou sélectionner des éléments pour communiquer leurs besoins, pensées et émotions. Peuvent être de basse technologie (papier) ou haute technologie (numérique)</description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Tablette -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Tablette">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#SupportNumerique"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#Auticiel_Agenda"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#AutisMate"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#BehaviorTracker_Pro"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#GoTalk_Now"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#Otsimo_Progress_Tracker"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#Pictello"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#Proloquo2Go"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#SIGUEME"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#TSARA"/>
+        <supporteOutil rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Therapeute_Laurent -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Therapeute_Laurent">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TherapeuteQualifie"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceMotricite"/>
+        <evalueAvec rdf:resource="http://example.org/ont/tsa-nlp#EchelleBOT2"/>
+        <evalueAvec rdf:resource="http://example.org/ont/tsa-nlp#EchelleDCDQ"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Kinect"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Leap_Motion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#Therapeute_Marie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#Therapeute_Marie">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TherapeuteQualifie"/>
+        <conduitIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceEmotionnel"/>
+        <recommandeOutil rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TraitementLangageNaturel -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TraitementLangageNaturel">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TechnologieNLP"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#AppAutismeSpeech"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#AutisMate"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#EarlyBot"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Milo"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Pepper"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#iCAN"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCognitif"/>
+        <utiliseeDansIntervention rdf:resource="http://example.org/ont/tsa-nlp#ExerciceCommunicationVerbale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleCognitif -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleCognitif">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleCommunication -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleCommunication">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleCommunicationNonVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleCommunicationNonVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleCommunicationVerbale -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleCommunicationVerbale">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleEmotionnel -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleEmotionnel">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleMoteur -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleMoteur">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#TroubleSocial -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#TroubleSocial">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#TroubleAssocieTSA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#VR -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#VR">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#RealiteVirtuelle"/>
+        <estImplementeeDans rdf:resource="http://example.org/ont/tsa-nlp#Oculus_Quest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ont/tsa-nlp#iCAN -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ont/tsa-nlp#iCAN">
+        <rdf:type rdf:resource="http://example.org/ont/tsa-nlp#Applications"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Smartphone"/>
+        <fonctionneSur rdf:resource="http://example.org/ont/tsa-nlp#Tablette"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceVocale"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#TraitementLangageNaturel"/>
+        <implementeTechnologie rdf:resource="http://example.org/ont/tsa-nlp#ReconnaissanceGestesVocaux"/>
+        <repondABesoin rdf:resource="http://example.org/ont/tsa-nlp#Besoin_CommunicationVerbale"/>
+        <description>Application mobile utilisant le traitement du langage naturel et la reconnaissance vocale pour aider les enfants avec TSA à améliorer leurs compétences de communication. L&apos;application propose des exercices interactifs adaptés aux besoins individuels</description>
+        <lien>file:///C:/Users/halbo/Documents/Cours_A25/IA03/Veille/Articles/Article%2019/1-s2.0-S107158191400086X-main.pdf</lien>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Ergotherapie">
+        <rdfs:label>Ergotherapie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Kinesitherapie">
+        <rdfs:label>Kinesitherapie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Neurologie">
+        <rdfs:label>Neurologie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Orthophonie">
+        <rdfs:label>Orthophonie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Pedopsychiatrie">
+        <rdfs:label>Pedopsychiatrie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Psychologie">
+        <rdfs:label>Psychologie</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://example.org/ont/tsa-nlp#Psychomotricite">
+        <rdfs:label>Psychomotricite</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
